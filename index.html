@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practica Uso Secciones</title>
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-        <!--topbar-->
-            <section id="topbar">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- TOPBAR -->
+        <header id="topbar">
             <h1>🇩🇴 PakeLuisRD 🇩🇴</h1>
-            </section>
         </header>
 
-        <!--areadevideo-->
+        <!-- FILA PRINCIPAL: VIDEO + CHAT -->
+        <div class="row-main">
+            <section id="areavideo">
+                <h2>🎥 Tuma</h2>
+                <p>Hola a todos, esta es un área de video</p>
+            </section>
 
-        <section id="areavideo">
-            <h2>tuma</h2>
-            <p> hola a todos esta es un area de video </p>
-        </section>
+            <section id="chatbox">
+                <h2>💬 Hola</h2>
+                <p>Hola, todo está bien por ahora</p>
+            </section>
+        </div>
 
-        <!--chat box-->
+        <!-- FILA DE NOTIFICACIONES -->
+        <div class="row-notifications">
+            <section id="nuevosubcritor" class="notif-card">
+                <h2>🔔 Luis Nunez</h2>
+            </section>
 
-        <section id="chatbox">
-            <h2>Hola</h2>
-            <p> hola todo esta bien por ahora</p>
-        </section>
+            <section id="nuevodonador" class="notif-card">
+                <h2>❤️ Yira Mendoza</h2>
+            </section>
 
-        <!--nuevo subcritor-->
+            <section id="nuevoseguidor" class="notif-card">
+                <h2>⭐ Alan Nunez</h2>
+            </section>
+        </div>
 
-        <Section id="nuevosubcritor">
-            <h2>Luis Nunez</h2>
-        </Section>
+    </div>
 
-        <!--Nuevo donador-->
-
-        <Section id="nuevodonador">
-            <h2>Yira Mendoza</h2>
-        </Section>
-
-        <!--Nuevo Seguidor-->
-
-        <Section id="nuevoseguidor">
-            <h2>Alan Nunez</h2>
-        </Section>
-
-    </body>
-<script src="script.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
