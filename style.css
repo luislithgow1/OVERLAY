@@ -1,0 +1,109 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: transparent;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== ESTILO BASE PARA SECCIONES ===== */
+section {
+    background: transparent;
+    display: flex;
+    flex-direction: column;      /* ← Texto en columna */
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 3px solid #131212;
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== TOPBAR ===== */
+#topbar {
+    width: 100%;                /* ← Mejor que 1920px fijos */
+    max-width: 1920px;
+    height: 100px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%); /* ← Centrado automático */
+    background: #00ffff00;
+}
+
+/* ===== AREA VIDEO ===== */
+#areavideo {
+    width: 70%;                 /* ← Responsive */
+    max-width: 1440px;
+    height: 800px;
+    top: 175px;
+    left: 40%;
+    transform: translateX(-50%); /* ← Centrado automático */
+    background: #80ff0000;
+}
+
+/* ===== CHATBOX ===== */
+#chatbox {
+    width: 440px;
+    height: 800px;
+    top: 175px;
+    right: 235px;                /* ← Mejor que left: 1600px */
+    background: #ff000000;
+}
+/* ===== NUEVO SUBCRITOR ===== */
+#nuevosubcritor {
+    width: 25%;                 /* ← Responsive */
+    max-width: 1440px;
+    height: 60px;
+    top: 1000px;
+    left: 35%;
+    transform: translateX(-100%); /* ← Centrado automático */
+    background: transparent;
+
+}
+/* ===== NUEVO DONADOR ===== */
+#nuevodonador {
+    width: 25%;                 /* ← Responsive */
+    max-width: 1440px;
+    height: 60px;
+    top: 1000px;
+    left: 62.5%;
+    transform: translateX(-100%); /* ← Centrado automático */
+    background: transparent;
+}
+/* ===== NUEVO SEGUIDOR ===== */
+#nuevoseguidor {
+    width: 25%;                 /* ← Responsive */
+    max-width: 1440px;
+    height: 60px;
+    top: 1000px;
+    left: 90%;
+    transform: translateX(-100%); /* ← Centrado automático */
+    background: transparent;
+}
+
+
+/* ===== MEJORAS VISUALES ===== */
+#topbar h1 {
+    font-size: 32px;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+#areavideo h2, #chatbox h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#areavideo p, #chatbox p {
+    font-size: 18px;
+    color: rgb(5, 10, 1);
+    opacity: 0.9;
+}
