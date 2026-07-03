@@ -6,104 +6,358 @@
 }
 
 body {
-    background: transparent;
-    height: 100vh;
-    font-family: Arial, sans-serif;
+    background: #0a0a0a;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.app-container {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 10px 40px;
 }
 
 /* ===== ESTILO BASE PARA SECCIONES ===== */
 section {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(2px);
     display: flex;
-    flex-direction: column;      /* ← Texto en columna */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
-    border: 3px solid #131212;
-    color: white;
-    font-size: 24px;
-    position: absolute;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 24px;
+    border: 3px solid #222;
+    color: #fff;
+    font-size: clamp(16px, 2vw, 24px);
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 16px 20px;
+    transition: all 0.2s ease;
+    overflow: hidden;
+    min-height: 60px;
 }
 
 /* ===== TOPBAR ===== */
 #topbar {
-    width: 100%;                /* ← Mejor que 1920px fijos */
+    width: 100%;
     max-width: 1920px;
-    height: 100px;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%); /* ← Centrado automático */
-    background: #00ffff00;
+    height: auto;
+    min-height: 80px;
+    padding: 16px 24px;
+    background: rgba(0, 240, 255, 0.06);
+    border-color: #00f0ff;
+    flex-shrink: 0;
 }
-
-/* ===== AREA VIDEO ===== */
-#areavideo {
-    width: 70%;                 /* ← Responsive */
-    max-width: 1440px;
-    height: 800px;
-    top: 175px;
-    left: 40%;
-    transform: translateX(-50%); /* ← Centrado automático */
-    background: #80ff0000;
-}
-
-/* ===== CHATBOX ===== */
-#chatbox {
-    width: 440px;
-    height: 800px;
-    top: 175px;
-    right: 235px;                /* ← Mejor que left: 1600px */
-    background: #ff000000;
-}
-/* ===== NUEVO SUBCRITOR ===== */
-#nuevosubcritor {
-    width: 25%;                 /* ← Responsive */
-    max-width: 1440px;
-    height: 60px;
-    top: 1000px;
-    left: 35%;
-    transform: translateX(-100%); /* ← Centrado automático */
-    background: transparent;
-
-}
-/* ===== NUEVO DONADOR ===== */
-#nuevodonador {
-    width: 25%;                 /* ← Responsive */
-    max-width: 1440px;
-    height: 60px;
-    top: 1000px;
-    left: 62.5%;
-    transform: translateX(-100%); /* ← Centrado automático */
-    background: transparent;
-}
-/* ===== NUEVO SEGUIDOR ===== */
-#nuevoseguidor {
-    width: 25%;                 /* ← Responsive */
-    max-width: 1440px;
-    height: 60px;
-    top: 1000px;
-    left: 90%;
-    transform: translateX(-100%); /* ← Centrado automático */
-    background: transparent;
-}
-
-
-/* ===== MEJORAS VISUALES ===== */
 #topbar h1 {
-    font-size: 32px;
-    color: #333;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    font-size: clamp(20px, 4vw, 42px);
+    color: #00f0ff;
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    letter-spacing: 2px;
+    text-align: center;
 }
 
-#areavideo h2, #chatbox h2 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 10px;
+/* ===== FILA PRINCIPAL: VIDEO + CHAT ===== */
+.row-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1920px;
+    justify-content: center;
 }
 
-#areavideo p, #chatbox p {
-    font-size: 18px;
-    color: rgb(5, 10, 1);
+#areavideo {
+    flex: 2 1 500px;
+    min-height: 400px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background: rgba(255, 0, 230, 0.04);
+    border-color: #ff00e6;
+    padding: 20px;
+}
+#areavideo h2 {
+    font-size: clamp(20px, 2.5vw, 32px);
+    color: #ff00e6;
+    text-shadow: 0 0 20px rgba(255, 0, 230, 0.3);
+}
+#areavideo p {
+    font-size: clamp(14px, 1.2vw, 18px);
+    color: #ddd;
     opacity: 0.9;
+    text-align: center;
+}
+
+#chatbox {
+    flex: 1 1 280px;
+    min-height: 300px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    background: rgba(0, 255, 136, 0.04);
+    border-color: #00ff88;
+    padding: 20px;
+}
+#chatbox h2 {
+    font-size: clamp(20px, 2.5vw, 32px);
+    color: #00ff88;
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+#chatbox p {
+    font-size: clamp(14px, 1.2vw, 18px);
+    color: #ddd;
+    opacity: 0.9;
+    text-align: center;
+}
+
+/* ===== FILA DE NOTIFICACIONES ===== */
+.row-notifications {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    max-width: 1920px;
+    justify-content: center;
+}
+
+.notif-card {
+    flex: 1 1 180px;
+    min-height: 70px;
+    padding: 12px 16px;
+    border-radius: 24px;
+    border: 3px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(2px);
+    transition: all 0.2s ease;
+}
+.notif-card h2 {
+    font-size: clamp(16px, 1.6vw, 26px);
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+#nuevosubcritor {
+    border-color: #ffaa00;
+}
+#nuevosubcritor h2 {
+    color: #ffaa00;
+    text-shadow: 0 0 20px rgba(255, 170, 0, 0.3);
+}
+
+#nuevodonador {
+    border-color: #ff4466;
+}
+#nuevodonador h2 {
+    color: #ff4466;
+    text-shadow: 0 0 20px rgba(255, 68, 102, 0.3);
+}
+
+#nuevoseguidor {
+    border-color: #44ffaa;
+}
+#nuevoseguidor h2 {
+    color: #44ffaa;
+    text-shadow: 0 0 20px rgba(68, 255, 170, 0.3);
+}
+
+/* ===== ESTILOS PARA EL EFECTO ELÉCTRICO ===== */
+section::before,
+section::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 24px;
+    padding: 3px;
+    background: conic-gradient(from 0deg, transparent, currentColor, transparent 30%, transparent 70%, currentColor, transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 0;
+    animation: rotateBorder 3s linear infinite;
+    opacity: 0.6;
+}
+section::after {
+    inset: -6px;
+    border-radius: 28px;
+    background: conic-gradient(from 90deg, transparent, currentColor, transparent 40%, transparent 60%, currentColor, transparent);
+    animation-duration: 4s;
+    opacity: 0.25;
+    filter: blur(2px);
+}
+
+@keyframes rotateBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Chispas viajeras */
+section .spark {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    animation: sparkTravel 4s linear infinite;
+}
+
+@keyframes sparkTravel {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(0);
+    }
+    10% {
+        opacity: 1;
+        transform: translate(10%, 0) scale(1.5);
+    }
+    90% {
+        opacity: 1;
+        transform: translate(90%, 0) scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(100%, 0) scale(0);
+    }
+}
+
+/* Línea de corriente adicional */
+section .current-line {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 0;
+    background: linear-gradient(90deg, transparent, currentColor, transparent 30%, transparent 70%, currentColor, transparent);
+    background-size: 200% 100%;
+    animation: electricFlow 4s linear infinite;
+    opacity: 0.15;
+}
+
+@keyframes electricFlow {
+    0% { background-position: -200% 50%; opacity: 0.15; }
+    50% { background-position: 200% 50%; opacity: 0.3; }
+    100% { background-position: -200% 50%; opacity: 0.15; }
+}
+
+/* Asegurar que el contenido esté por encima de los pseudo-elementos */
+section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .row-main {
+        flex-direction: column;
+        align-items: center;
+    }
+    #areavideo {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+    #chatbox {
+        width: 100%;
+        max-width: 500px;
+        aspect-ratio: 4 / 3;
+        min-height: 200px;
+    }
+    .row-notifications {
+        gap: 12px;
+    }
+    .notif-card {
+        flex: 1 1 140px;
+        min-height: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .app-container {
+        padding: 10px 4px 20px;
+        gap: 12px;
+    }
+    section {
+        padding: 12px 14px;
+        border-radius: 18px;
+        min-height: 50px;
+    }
+    #topbar {
+        min-height: 60px;
+        padding: 10px 16px;
+    }
+    #topbar h1 {
+        font-size: clamp(16px, 5vw, 24px);
+    }
+    #areavideo {
+        min-height: 200px;
+        aspect-ratio: 16 / 10;
+        padding: 14px;
+    }
+    #chatbox {
+        min-height: 180px;
+        aspect-ratio: 4 / 3;
+        padding: 14px;
+    }
+    .row-notifications {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .notif-card {
+        flex: 1 1 auto;
+        min-height: 50px;
+        padding: 10px 12px;
+    }
+    .notif-card h2 {
+        font-size: clamp(14px, 4vw, 20px);
+    }
+    section::before {
+        border-radius: 18px;
+    }
+    section::after {
+        border-radius: 22px;
+    }
+}
+
+@media (max-width: 400px) {
+    #areavideo {
+        aspect-ratio: 4 / 3;
+        min-height: 160px;
+    }
+    #chatbox {
+        aspect-ratio: 1 / 1;
+        min-height: 150px;
+    }
+    section {
+        border-width: 2px;
+    }
+    section::before {
+        border-radius: 14px;
+    }
+    section::after {
+        border-radius: 18px;
+    }
 }
